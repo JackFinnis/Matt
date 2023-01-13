@@ -58,12 +58,15 @@ struct WidgetView: View {
     let image: Image?
 
     var body: some View {
-        if let image {
-            image
-                .resizable()
-                .scaledToFit()
-        } else {
-            MattIsAway()
+        ZStack {
+            Color.white
+            if let image {
+                image
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                MattIsAway()
+            }
         }
     }
 }
@@ -74,6 +77,6 @@ struct MattWidget: Widget {
             WidgetView(image: entry.image)
         }
         .supportedFamilies([.systemLarge, .systemSmall])
-        .configurationDisplayName("Today's Matt Cartoon")
+        .configurationDisplayName("Today's Matt Cartoon!")
     }
 }

@@ -15,6 +15,7 @@ struct MattView: View {
     
     var body: some View {
         List {}
+            .listStyle(.plain)
             .refreshable {
                 await fetch()
             }
