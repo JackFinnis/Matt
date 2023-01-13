@@ -11,7 +11,7 @@ import SwiftUI
 struct MattApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MattView()
         }
     }
 }

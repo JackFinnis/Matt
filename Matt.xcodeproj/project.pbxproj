@@ -8,17 +8,57 @@
 
 /* Begin PBXBuildFile section */
 		04E3845F297201F50070AC9B /* MattApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3845E297201F50070AC9B /* MattApp.swift */; };
-		04E38461297201F50070AC9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E38460297201F50070AC9B /* ContentView.swift */; };
 		04E38463297201F60070AC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E38462297201F60070AC9B /* Assets.xcassets */; };
-		04E38466297201F60070AC9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E38465297201F60070AC9B /* Preview Assets.xcassets */; };
+		04E3846D29720AA70070AC9B /* MattView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3846C29720AA70070AC9B /* MattView.swift */; };
+		04E3847129720ADD0070AC9B /* WifiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3847029720ADD0070AC9B /* WifiError.swift */; };
+		04E3849329720DAF0070AC9B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E3847829720D750070AC9B /* WidgetKit.framework */; };
+		04E3849429720DAF0070AC9B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E3847A29720D750070AC9B /* SwiftUI.framework */; };
+		04E3849729720DAF0070AC9B /* MattWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3849629720DAF0070AC9B /* MattWidgetBundle.swift */; };
+		04E3849929720DAF0070AC9B /* MattWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3849829720DAF0070AC9B /* MattWidget.swift */; };
+		04E3849C29720DB00070AC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E3849B29720DB00070AC9B /* Assets.xcassets */; };
+		04E384A229720DB00070AC9B /* MattWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04E384A72972125E0070AC9B /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
+		04E384A8297212A30070AC9B /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04E384A029720DB00070AC9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E38453297201F50070AC9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04E3849129720DAF0070AC9B;
+			remoteInfo = MattWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04E3848D29720D760070AC9B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04E384A229720DB00070AC9B /* MattWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		04E3845B297201F50070AC9B /* Matt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E3845E297201F50070AC9B /* MattApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattApp.swift; sourceTree = "<group>"; };
-		04E38460297201F50070AC9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04E38462297201F60070AC9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04E38465297201F60070AC9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04E3846C29720AA70070AC9B /* MattView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattView.swift; sourceTree = "<group>"; };
+		04E3847029720ADD0070AC9B /* WifiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiError.swift; sourceTree = "<group>"; };
+		04E3847829720D750070AC9B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		04E3847A29720D750070AC9B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MattWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E3849629720DAF0070AC9B /* MattWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattWidgetBundle.swift; sourceTree = "<group>"; };
+		04E3849829720DAF0070AC9B /* MattWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattWidget.swift; sourceTree = "<group>"; };
+		04E3849B29720DB00070AC9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04E3849D29720DB00070AC9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E384A62972125E0070AC9B /* MattIsAway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattIsAway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +69,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04E3848F29720DAF0070AC9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E3849429720DAF0070AC9B /* SwiftUI.framework in Frameworks */,
+				04E3849329720DAF0070AC9B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -36,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				04E3845D297201F50070AC9B /* Matt */,
+				04E3849529720DAF0070AC9B /* MattWidget */,
+				04E3847729720D750070AC9B /* Frameworks */,
 				04E3845C297201F50070AC9B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				04E3845B297201F50070AC9B /* Matt.app */,
+				04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,19 +104,32 @@
 			isa = PBXGroup;
 			children = (
 				04E3845E297201F50070AC9B /* MattApp.swift */,
-				04E38460297201F50070AC9B /* ContentView.swift */,
+				04E3846C29720AA70070AC9B /* MattView.swift */,
+				04E384A62972125E0070AC9B /* MattIsAway.swift */,
+				04E3847029720ADD0070AC9B /* WifiError.swift */,
 				04E38462297201F60070AC9B /* Assets.xcassets */,
-				04E38464297201F60070AC9B /* Preview Content */,
 			);
 			path = Matt;
 			sourceTree = "<group>";
 		};
-		04E38464297201F60070AC9B /* Preview Content */ = {
+		04E3847729720D750070AC9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				04E38465297201F60070AC9B /* Preview Assets.xcassets */,
+				04E3847829720D750070AC9B /* WidgetKit.framework */,
+				04E3847A29720D750070AC9B /* SwiftUI.framework */,
 			);
-			path = "Preview Content";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04E3849529720DAF0070AC9B /* MattWidget */ = {
+			isa = PBXGroup;
+			children = (
+				04E3849629720DAF0070AC9B /* MattWidgetBundle.swift */,
+				04E3849829720DAF0070AC9B /* MattWidget.swift */,
+				04E3849B29720DB00070AC9B /* Assets.xcassets */,
+				04E3849D29720DB00070AC9B /* Info.plist */,
+			);
+			path = MattWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,15 +142,34 @@
 				04E38457297201F50070AC9B /* Sources */,
 				04E38458297201F50070AC9B /* Frameworks */,
 				04E38459297201F50070AC9B /* Resources */,
+				04E3848D29720D760070AC9B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04E384A129720DB00070AC9B /* PBXTargetDependency */,
 			);
 			name = Matt;
 			productName = Matt;
 			productReference = 04E3845B297201F50070AC9B /* Matt.app */;
 			productType = "com.apple.product-type.application";
+		};
+		04E3849129720DAF0070AC9B /* MattWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04E384A329720DB00070AC9B /* Build configuration list for PBXNativeTarget "MattWidgetExtension" */;
+			buildPhases = (
+				04E3848E29720DAF0070AC9B /* Sources */,
+				04E3848F29720DAF0070AC9B /* Frameworks */,
+				04E3849029720DAF0070AC9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MattWidgetExtension;
+			productName = MattWidgetExtension;
+			productReference = 04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +182,9 @@
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					04E3845A297201F50070AC9B = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					04E3849129720DAF0070AC9B = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -116,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				04E3845A297201F50070AC9B /* Matt */,
+				04E3849129720DAF0070AC9B /* MattWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -125,8 +213,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E38466297201F60070AC9B /* Preview Assets.xcassets in Resources */,
 				04E38463297201F60070AC9B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E3849029720DAF0070AC9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E3849C29720DB00070AC9B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +232,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E38461297201F50070AC9B /* ContentView.swift in Sources */,
+				04E3846D29720AA70070AC9B /* MattView.swift in Sources */,
 				04E3845F297201F50070AC9B /* MattApp.swift in Sources */,
+				04E3847129720ADD0070AC9B /* WifiError.swift in Sources */,
+				04E384A72972125E0070AC9B /* MattIsAway.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E3848E29720DAF0070AC9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E384A8297212A30070AC9B /* MattIsAway.swift in Sources */,
+				04E3849729720DAF0070AC9B /* MattWidgetBundle.swift in Sources */,
+				04E3849929720DAF0070AC9B /* MattWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04E384A129720DB00070AC9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04E3849129720DAF0070AC9B /* MattWidgetExtension */;
+			targetProxy = 04E384A029720DB00070AC9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		04E38467297201F60070AC9B /* Debug */ = {
@@ -262,11 +377,12 @@
 		04E3846A297201F60070AC9B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Matt/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4CQW4CFFYT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -275,6 +391,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -291,11 +408,12 @@
 		04E3846B297201F60070AC9B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Matt/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4CQW4CFFYT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -304,6 +422,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +430,60 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfinnis.Matt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04E384A429720DB00070AC9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CQW4CFFYT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MattWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MattWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackfinnis.Matt.MattWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04E384A529720DB00070AC9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CQW4CFFYT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MattWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MattWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackfinnis.Matt.MattWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,6 +507,15 @@
 			buildConfigurations = (
 				04E3846A297201F60070AC9B /* Debug */,
 				04E3846B297201F60070AC9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04E384A329720DB00070AC9B /* Build configuration list for PBXNativeTarget "MattWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E384A429720DB00070AC9B /* Debug */,
+				04E384A529720DB00070AC9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
