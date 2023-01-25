@@ -23,28 +23,20 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         fetch { image in
             let entry = Entry(image: image)
-            let timeline = Timeline(entries: [entry], policy: .after(.now.addingTimeInterval(3600)))
+            let oneHour = Date.now.addingTimeInterval(3600)
+            let timeline = Timeline(entries: [entry], policy: .after(oneHour))
             completion(timeline)
         }
     }
     
     func fetch(completion: @escaping (Image?) -> Void) {
         Task {
-            let url = URL(string: "https://matt.finnisjack.repl.co")!
-            do {
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let urlString = String(data: data, encoding: .utf8)
-                if let urlString, let url = URL(string: urlString) {
-                    
-                    let (data, _) = try await URLSession.shared.data(from: url)
-                    if let uiImage = UIImage(data: data) {
-                        completion(Image(uiImage: uiImage))
-                    }
-                    
-                } else if urlString == "away" {
-                    completion(nil)
-                }
-            } catch {}
+            guard let url = await MattHelper.fetchImage(),
+                  let (data, _) = try? await URLSession.shared.data(from: url),
+                  let uiImage = UIImage(data: data)
+            else { return }
+            
+            completion(Image(uiImage: uiImage))
         }
     }
 }

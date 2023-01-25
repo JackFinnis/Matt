@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import WidgetKit
+import SwiftSoup
 
 struct MattView: View {
     @Environment(\.scenePhase) var scenePhase
@@ -19,11 +21,9 @@ struct MattView: View {
             .refreshable {
                 await fetch()
             }
-            .task {
-                await fetch()
-            }
             .onChange(of: scenePhase) { newPhase in
                 if newPhase == .active {
+                    WidgetCenter.shared.reloadAllTimelines()
                     Task {
                         await fetch()
                     }
@@ -49,23 +49,11 @@ struct MattView: View {
     }
     
     func fetch() async {
-        error = false
-        let url = URL(string: "https://matt.finnisjack.repl.co")!
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-
-            let urlString = String(data: data, encoding: .utf8)
-            if let urlString, let url = URL(string: urlString) {
-                self.url = url
-                away = false
-            } else if urlString == "away" {
-                away = true
-            } else {
-                self.error = true
-            }
-        } catch {
-            debugPrint(error)
-            self.error = true
+        if let url = await MattHelper.fetchImage() {
+            self.url = url
+            error = false
+        } else {
+            error = true
         }
     }
 }

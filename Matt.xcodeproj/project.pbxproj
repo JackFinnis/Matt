@@ -19,6 +19,10 @@
 		04E384A229720DB00070AC9B /* MattWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04E384A72972125E0070AC9B /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
 		04E384A8297212A30070AC9B /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
+		04F582D32981816300C62E0D /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 04F582D22981816300C62E0D /* SwiftSoup */; };
+		04F582D52981870300C62E0D /* MattHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F582D42981870300C62E0D /* MattHelper.swift */; };
+		04F582D6298187EC00C62E0D /* MattHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F582D42981870300C62E0D /* MattHelper.swift */; };
+		04F582D8298189DB00C62E0D /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 04F582D7298189DB00C62E0D /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +38,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		04E3848D29720D760070AC9B /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -59,6 +63,7 @@
 		04E3849B29720DB00070AC9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04E3849D29720DB00070AC9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E384A62972125E0070AC9B /* MattIsAway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattIsAway.swift; sourceTree = "<group>"; };
+		04F582D42981870300C62E0D /* MattHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F582D32981816300C62E0D /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,7 @@
 			files = (
 				04E3849429720DAF0070AC9B /* SwiftUI.framework in Frameworks */,
 				04E3849329720DAF0070AC9B /* WidgetKit.framework in Frameworks */,
+				04F582D8298189DB00C62E0D /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +114,7 @@
 				04E3846C29720AA70070AC9B /* MattView.swift */,
 				04E384A62972125E0070AC9B /* MattIsAway.swift */,
 				04E3847029720ADD0070AC9B /* WifiError.swift */,
+				04F582D42981870300C62E0D /* MattHelper.swift */,
 				04E38462297201F60070AC9B /* Assets.xcassets */,
 			);
 			path = Matt;
@@ -150,6 +158,9 @@
 				04E384A129720DB00070AC9B /* PBXTargetDependency */,
 			);
 			name = Matt;
+			packageProductDependencies = (
+				04F582D22981816300C62E0D /* SwiftSoup */,
+			);
 			productName = Matt;
 			productReference = 04E3845B297201F50070AC9B /* Matt.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +178,9 @@
 			dependencies = (
 			);
 			name = MattWidgetExtension;
+			packageProductDependencies = (
+				04F582D7298189DB00C62E0D /* SwiftSoup */,
+			);
 			productName = MattWidgetExtension;
 			productReference = 04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -198,6 +212,9 @@
 				Base,
 			);
 			mainGroup = 04E38452297201F50070AC9B;
+			packageReferences = (
+				04F582D12981816300C62E0D /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 04E3845C297201F50070AC9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,6 +253,7 @@
 				04E3845F297201F50070AC9B /* MattApp.swift in Sources */,
 				04E3847129720ADD0070AC9B /* WifiError.swift in Sources */,
 				04E384A72972125E0070AC9B /* MattIsAway.swift in Sources */,
+				04F582D52981870300C62E0D /* MattHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E384A8297212A30070AC9B /* MattIsAway.swift in Sources */,
+				04F582D6298187EC00C62E0D /* MattHelper.swift in Sources */,
 				04E3849729720DAF0070AC9B /* MattWidgetBundle.swift in Sources */,
 				04E3849929720DAF0070AC9B /* MattWidget.swift in Sources */,
 			);
@@ -313,7 +332,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -367,6 +386,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -523,6 +543,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04F582D12981816300C62E0D /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04F582D22981816300C62E0D /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04F582D12981816300C62E0D /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		04F582D7298189DB00C62E0D /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04F582D12981816300C62E0D /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04E38453297201F50070AC9B /* Project object */;
 }
