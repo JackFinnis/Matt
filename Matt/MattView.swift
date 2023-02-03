@@ -12,7 +12,6 @@ import SwiftSoup
 struct MattView: View {
     @Environment(\.scenePhase) var scenePhase
     @State var url: URL?
-    @State var away = false
     @State var error = false
     
     var body: some View {
@@ -32,8 +31,6 @@ struct MattView: View {
             .overlay {
                 if error {
                     WifiError()
-                } else if away {
-                    MattIsAway()
                 } else {
                     AsyncImage(url: url) { image in
                         image
