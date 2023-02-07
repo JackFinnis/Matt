@@ -31,12 +31,18 @@ struct Provider: TimelineProvider {
     
     func fetch(completion: @escaping (Image?) -> Void) {
         Task {
-            guard let url = await MattHelper.fetchImage(),
-                  let (data, _) = try? await URLSession.shared.data(from: url),
-                  let uiImage = UIImage(data: data)
-            else { return }
-            
-            completion(Image(uiImage: uiImage))
+            switch await MattHelper.fetchImage() {
+            case .success(let url):
+                guard let (data, _) = try? await URLSession.shared.data(from: url),
+                      let uiImage = UIImage(data: data)
+                else { return }
+                
+                completion(Image(uiImage: uiImage))
+            case .away:
+                completion(nil)
+            case .wifiError:
+                break
+            }
         }
     }
 }

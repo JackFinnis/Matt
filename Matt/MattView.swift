@@ -13,6 +13,7 @@ struct MattView: View {
     @Environment(\.scenePhase) var scenePhase
     @State var url: URL?
     @State var error = false
+    @State var away = false
     
     var body: some View {
         List {}
@@ -31,6 +32,8 @@ struct MattView: View {
             .overlay {
                 if error {
                     WifiError()
+                } else if away {
+                    MattIsAway()
                 } else {
                     AsyncImage(url: url) { image in
                         image
@@ -46,11 +49,17 @@ struct MattView: View {
     }
     
     func fetch() async {
-        if let url = await MattHelper.fetchImage() {
+        switch await MattHelper.fetchImage() {
+        case .success(let url):
             self.url = url
             error = false
-        } else {
+            away = false
+        case .wifiError:
             error = true
+            away = false
+        case .away:
+            away = true
+            error = false
         }
     }
 }

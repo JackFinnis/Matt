@@ -9,20 +9,34 @@ import Foundation
 import SwiftSoup
 
 struct MattHelper {
-    static func fetchImage() async -> URL? {
+    static func fetchImage() async -> MattHelper.Result {
+        let url = URL(string: "https://www.telegraph.co.uk")!
+        
+        let data: Data
         do {
-            let url = URL(string: "https://www.telegraph.co.uk")!
-            let (data, _) = try await URLSession.shared.data(from: url)
-            guard let html = String(data: data, encoding: .utf8) else { return nil }
+            (data, _) = try await URLSession.shared.data(from: url)
+        } catch {
+            return .wifiError
+        }
+        
+        do {
+            guard let html = String(data: data, encoding: .utf8) else { return .away }
             let doc = try SwiftSoup.parse(html)
             let elems = try doc.getAllElements().array()
-            guard let pic = try elems.first(where: { try $0.attr("alt") == "Matt cartoon" }) else { return nil }
+            guard let pic = try elems.first(where: { try $0.attr("alt") == "Matt cartoon" }) else { return .away }
             let path = try pic.attr("src")
-            guard var components = URLComponents(string: url.absoluteString + path) else { return nil }
+            guard var components = URLComponents(string: url.absoluteString + path) else { return .away }
             components.query = nil
-            return components.url
+            guard let url = components.url else { return .away }
+            return .success(url)
         } catch {
-            return nil
+            return .away
         }
+    }
+    
+    enum Result {
+        case success(URL)
+        case away
+        case wifiError
     }
 }
