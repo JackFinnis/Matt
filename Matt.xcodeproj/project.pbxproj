@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BE0BED29931CCE00A68B8F /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BEB29931C4500A68B8F /* WidgetView.swift */; };
 		04E3845F297201F50070AC9B /* MattApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3845E297201F50070AC9B /* MattApp.swift */; };
 		04E38463297201F60070AC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E38462297201F60070AC9B /* Assets.xcassets */; };
 		04E3846D29720AA70070AC9B /* MattView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3846C29720AA70070AC9B /* MattView.swift */; };
@@ -14,7 +15,7 @@
 		04E3849329720DAF0070AC9B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E3847829720D750070AC9B /* WidgetKit.framework */; };
 		04E3849429720DAF0070AC9B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E3847A29720D750070AC9B /* SwiftUI.framework */; };
 		04E3849729720DAF0070AC9B /* MattWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3849629720DAF0070AC9B /* MattWidgetBundle.swift */; };
-		04E3849929720DAF0070AC9B /* MattWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3849829720DAF0070AC9B /* MattWidget.swift */; };
+		04E3849929720DAF0070AC9B /* MattProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3849829720DAF0070AC9B /* MattProvider.swift */; };
 		04E3849C29720DB00070AC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E3849B29720DB00070AC9B /* Assets.xcassets */; };
 		04E384A229720DB00070AC9B /* MattWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04E384A72972125E0070AC9B /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04BE0BEB29931C4500A68B8F /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		04E3845B297201F50070AC9B /* Matt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E3845E297201F50070AC9B /* MattApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattApp.swift; sourceTree = "<group>"; };
 		04E38462297201F60070AC9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		04E3847A29720D750070AC9B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MattWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E3849629720DAF0070AC9B /* MattWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattWidgetBundle.swift; sourceTree = "<group>"; };
-		04E3849829720DAF0070AC9B /* MattWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattWidget.swift; sourceTree = "<group>"; };
+		04E3849829720DAF0070AC9B /* MattProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattProvider.swift; sourceTree = "<group>"; };
 		04E3849B29720DB00070AC9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04E3849D29720DB00070AC9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E384A62972125E0070AC9B /* MattIsAway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattIsAway.swift; sourceTree = "<group>"; };
@@ -133,7 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				04E3849629720DAF0070AC9B /* MattWidgetBundle.swift */,
-				04E3849829720DAF0070AC9B /* MattWidget.swift */,
+				04E3849829720DAF0070AC9B /* MattProvider.swift */,
+				04BE0BEB29931C4500A68B8F /* WidgetView.swift */,
 				04E3849B29720DB00070AC9B /* Assets.xcassets */,
 				04E3849D29720DB00070AC9B /* Info.plist */,
 			);
@@ -264,7 +267,8 @@
 				04E384A8297212A30070AC9B /* MattIsAway.swift in Sources */,
 				04F582D6298187EC00C62E0D /* MattHelper.swift in Sources */,
 				04E3849729720DAF0070AC9B /* MattWidgetBundle.swift in Sources */,
-				04E3849929720DAF0070AC9B /* MattWidget.swift in Sources */,
+				04E3849929720DAF0070AC9B /* MattProvider.swift in Sources */,
+				04BE0BED29931CCE00A68B8F /* WidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

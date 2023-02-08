@@ -9,7 +9,12 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-struct Provider: TimelineProvider {
+struct Entry: TimelineEntry {
+    let date = Date()
+    let image: Image?
+}
+
+struct MattProvider: TimelineProvider {
     func placeholder(in context: Context) -> Entry {
         Entry(image: Image("cartoon"))
     }
@@ -44,37 +49,5 @@ struct Provider: TimelineProvider {
                 break
             }
         }
-    }
-}
-
-struct Entry: TimelineEntry {
-    let date = Date()
-    let image: Image?
-}
-
-struct WidgetView: View {
-    let image: Image?
-
-    var body: some View {
-        ZStack {
-            Color.white
-            if let image {
-                image
-                    .resizable()
-                    .scaledToFit()
-            } else {
-                MattIsAway()
-            }
-        }
-    }
-}
-
-struct MattWidget: Widget {
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "matt", provider: Provider()) { entry in
-            WidgetView(image: entry.image)
-        }
-        .supportedFamilies([.systemLarge, .systemSmall])
-        .configurationDisplayName("Today's Matt Cartoon!")
     }
 }

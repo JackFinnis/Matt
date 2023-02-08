@@ -14,3 +14,14 @@ struct MattWidgetBundle: WidgetBundle {
         MattWidget()
     }
 }
+
+struct MattWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "matt", provider: MattProvider()) { entry in
+            WidgetView(image: entry.image)
+        }
+        .supportedFamilies([.systemLarge])
+        .configurationDisplayName("Today's Matt Cartoon!")
+        .description("Updates Daily")
+    }
+}

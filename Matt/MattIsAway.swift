@@ -14,8 +14,10 @@ struct MattIsAway: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150)
-            Text("is away")
+            Text(" is away ")
                 .font(.system(.title3, design: .serif).italic())
+                .blur(radius: 0.25)
+                .opacity(0.8)
         }
         .allowsHitTesting(false)
     }
