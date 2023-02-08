@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		04BE0BED29931CCE00A68B8F /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BEB29931C4500A68B8F /* WidgetView.swift */; };
+		04BE0BEF2993B12200A68B8F /* MattVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BEE2993B12200A68B8F /* MattVM.swift */; };
+		04BE0BF22993B17B00A68B8F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BF12993B17B00A68B8F /* Defaults.swift */; };
+		04BE0BF32993B1AB00A68B8F /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
+		04BE0BF52993B22500A68B8F /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BF42993B22500A68B8F /* ShareView.swift */; };
+		04BE0BF72993B3AC00A68B8F /* AddWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BF62993B3AC00A68B8F /* AddWidgetView.swift */; };
+		04BE0BFA2993B8A400A68B8F /* DismissCross.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BF82993B8A400A68B8F /* DismissCross.swift */; };
+		04BE0BFB2993B8A400A68B8F /* DraggableBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BF92993B8A400A68B8F /* DraggableBar.swift */; };
+		04BE0BFF2993C0F500A68B8F /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BFE2993C0F500A68B8F /* Haptics.swift */; };
+		04BE0C012993CCD400A68B8F /* VisionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0C002993CCD400A68B8F /* VisionHelper.swift */; };
+		04BE0C022993E00E00A68B8F /* VisionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0C002993CCD400A68B8F /* VisionHelper.swift */; };
 		04E3845F297201F50070AC9B /* MattApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3845E297201F50070AC9B /* MattApp.swift */; };
 		04E38463297201F60070AC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E38462297201F60070AC9B /* Assets.xcassets */; };
 		04E3846D29720AA70070AC9B /* MattView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3846C29720AA70070AC9B /* MattView.swift */; };
@@ -19,7 +29,6 @@
 		04E3849C29720DB00070AC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E3849B29720DB00070AC9B /* Assets.xcassets */; };
 		04E384A229720DB00070AC9B /* MattWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04E3849229720DAF0070AC9B /* MattWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04E384A72972125E0070AC9B /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
-		04E384A8297212A30070AC9B /* MattIsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E384A62972125E0070AC9B /* MattIsAway.swift */; };
 		04F582D32981816300C62E0D /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 04F582D22981816300C62E0D /* SwiftSoup */; };
 		04F582D52981870300C62E0D /* MattHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F582D42981870300C62E0D /* MattHelper.swift */; };
 		04F582D6298187EC00C62E0D /* MattHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F582D42981870300C62E0D /* MattHelper.swift */; };
@@ -52,6 +61,14 @@
 
 /* Begin PBXFileReference section */
 		04BE0BEB29931C4500A68B8F /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		04BE0BEE2993B12200A68B8F /* MattVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattVM.swift; sourceTree = "<group>"; };
+		04BE0BF12993B17B00A68B8F /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		04BE0BF42993B22500A68B8F /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		04BE0BF62993B3AC00A68B8F /* AddWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWidgetView.swift; sourceTree = "<group>"; };
+		04BE0BF82993B8A400A68B8F /* DismissCross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissCross.swift; sourceTree = "<group>"; };
+		04BE0BF92993B8A400A68B8F /* DraggableBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableBar.swift; sourceTree = "<group>"; };
+		04BE0BFE2993C0F500A68B8F /* Haptics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		04BE0C002993CCD400A68B8F /* VisionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionHelper.swift; sourceTree = "<group>"; };
 		04E3845B297201F50070AC9B /* Matt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E3845E297201F50070AC9B /* MattApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattApp.swift; sourceTree = "<group>"; };
 		04E38462297201F60070AC9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04BE0BF02993B14900A68B8F /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				04BE0C002993CCD400A68B8F /* VisionHelper.swift */,
+				04BE0BFE2993C0F500A68B8F /* Haptics.swift */,
+				04BE0BF62993B3AC00A68B8F /* AddWidgetView.swift */,
+				04BE0BF82993B8A400A68B8F /* DismissCross.swift */,
+				04BE0BF92993B8A400A68B8F /* DraggableBar.swift */,
+				04BE0BF42993B22500A68B8F /* ShareView.swift */,
+				04BE0BF12993B17B00A68B8F /* Defaults.swift */,
+				04E384A62972125E0070AC9B /* MattIsAway.swift */,
+				04E3847029720ADD0070AC9B /* WifiError.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
 		04E38452297201F50070AC9B = {
 			isa = PBXGroup;
 			children = (
@@ -114,9 +147,9 @@
 			children = (
 				04E3845E297201F50070AC9B /* MattApp.swift */,
 				04E3846C29720AA70070AC9B /* MattView.swift */,
-				04E384A62972125E0070AC9B /* MattIsAway.swift */,
-				04E3847029720ADD0070AC9B /* WifiError.swift */,
 				04F582D42981870300C62E0D /* MattHelper.swift */,
+				04BE0BEE2993B12200A68B8F /* MattVM.swift */,
+				04BE0BF02993B14900A68B8F /* Extra */,
 				04E38462297201F60070AC9B /* Assets.xcassets */,
 			);
 			path = Matt;
@@ -252,10 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BE0C012993CCD400A68B8F /* VisionHelper.swift in Sources */,
+				04BE0BFF2993C0F500A68B8F /* Haptics.swift in Sources */,
+				04BE0BFB2993B8A400A68B8F /* DraggableBar.swift in Sources */,
+				04BE0BF52993B22500A68B8F /* ShareView.swift in Sources */,
+				04BE0BF72993B3AC00A68B8F /* AddWidgetView.swift in Sources */,
 				04E3846D29720AA70070AC9B /* MattView.swift in Sources */,
+				04BE0BFA2993B8A400A68B8F /* DismissCross.swift in Sources */,
+				04BE0BF22993B17B00A68B8F /* Defaults.swift in Sources */,
 				04E3845F297201F50070AC9B /* MattApp.swift in Sources */,
 				04E3847129720ADD0070AC9B /* WifiError.swift in Sources */,
 				04E384A72972125E0070AC9B /* MattIsAway.swift in Sources */,
+				04BE0BEF2993B12200A68B8F /* MattVM.swift in Sources */,
 				04F582D52981870300C62E0D /* MattHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,11 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E384A8297212A30070AC9B /* MattIsAway.swift in Sources */,
 				04F582D6298187EC00C62E0D /* MattHelper.swift in Sources */,
+				04BE0BF32993B1AB00A68B8F /* MattIsAway.swift in Sources */,
 				04E3849729720DAF0070AC9B /* MattWidgetBundle.swift in Sources */,
 				04E3849929720DAF0070AC9B /* MattProvider.swift in Sources */,
 				04BE0BED29931CCE00A68B8F /* WidgetView.swift in Sources */,
+				04BE0C022993E00E00A68B8F /* VisionHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfinnis.Matt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -460,6 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfinnis.Matt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,6 +534,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -520,6 +565,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

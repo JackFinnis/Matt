@@ -5,37 +5,69 @@
 //  Created by Jack Finnis on 25/01/2023.
 //
 
-import Foundation
+import UIKit
 import SwiftSoup
+
+class Cartoon {
+    let date = Date()
+    let uiImage: UIImage
+    let url: URL
+    var caption = ""
+    
+    init(uiImage: UIImage, url: URL) {
+        self.uiImage = uiImage
+        self.url = url
+    }
+    
+    func getCaption(completion: @escaping () -> Void) {
+        VisionHelper.findText(in: uiImage) { string in
+            self.caption = string
+            completion()
+        }
+    }
+}
 
 struct MattHelper {
     static func fetchImage() async -> MattHelper.Result {
-        let url = URL(string: "https://www.telegraph.co.uk")!
+        let telegraph = URL(string: "https://www.telegraph.co.uk")!
         
-        let data: Data
+        var data: Data
         do {
-            (data, _) = try await URLSession.shared.data(from: url)
+            (data, _) = try await URLSession.shared.data(from: telegraph)
         } catch {
             return .wifiError
         }
         
+        let url: URL
         do {
             guard let html = String(data: data, encoding: .utf8) else { return .away }
             let doc = try SwiftSoup.parse(html)
             let elems = try doc.getAllElements().array()
             guard let pic = try elems.first(where: { try $0.attr("alt") == "Matt cartoon" }) else { return .away }
             let path = try pic.attr("src")
-            guard var components = URLComponents(string: url.absoluteString + path) else { return .away }
+            guard var components = URLComponents(string: telegraph.absoluteString + path) else { return .away }
             components.query = nil
-            guard let url = components.url else { return .away }
-            return .success(url)
+            guard let mattUrl = components.url else { return .away }
+            url = mattUrl
         } catch {
+            return .away
+        }
+        
+        do {
+            (data, _) = try await URLSession.shared.data(from: url)
+        } catch {
+            return .wifiError
+        }
+        
+        if let uiImage = UIImage(data: data) {
+            return .success(Cartoon(uiImage: uiImage, url: url))
+        } else {
             return .away
         }
     }
     
     enum Result {
-        case success(URL)
+        case success(Cartoon)
         case away
         case wifiError
     }

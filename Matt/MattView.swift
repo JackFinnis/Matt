@@ -11,13 +11,20 @@ import SwiftSoup
 
 struct MattView: View {
     @Environment(\.scenePhase) var scenePhase
-    @State var url: URL?
+    @StateObject var mattVM = MattVM()
+    @State var cartoon: Cartoon?
     @State var error = false
     @State var away = false
+    @State var noWidgets = false
+    @State var showShareSheet = false
+    @State var showAddWidgetView = false
+    
+    @State var scale = 1.0
+    @State var shake = false
     
     var date: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "E, d MMM"
+        formatter.dateFormat = "E d MMM"
         return formatter.string(from: .now)
     }
     
@@ -33,16 +40,56 @@ struct MattView: View {
                         WifiError()
                     } else if away {
                         MattIsAway()
+                    } else if let cartoon {
+                        Image(uiImage: cartoon.uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.horizontal, -50)
+                            .allowsHitTesting(false)
+                            .shareSheet(items: [cartoon.uiImage, "Check out today's Matt cartoon!"], isPresented: $showShareSheet)
+                            .toolbar {
+                                ToolbarItem(placement: .primaryAction) {
+                                    HStack {
+                                        let favourite = mattVM.favourites.contains(cartoon.url.absoluteString)
+                                        Button {
+                                            let urlString = cartoon.url.absoluteString
+                                            if favourite {
+                                                mattVM.favourites.removeAll { $0 == urlString }
+                                            } else {
+                                                mattVM.favourites.append(urlString)
+                                                Haptics.tap()
+                                                
+                                                // Animations
+                                                shake = true
+                                                withAnimation(.spring(response: 0.2, dampingFraction: 0.2, blendDuration: 0.2)) {
+                                                    shake = false
+                                                }
+                                                withAnimation(.easeInOut(duration: 0.25)) {
+                                                    scale = 1.3
+                                                }
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                                        scale = 1
+                                                    }
+                                                }
+                                            }
+                                        } label: {
+                                            Image(systemName: favourite ? "star.fill" : "star")
+                                                .foregroundColor(.yellow)
+                                                .scaleEffect(scale)
+                                                .rotationEffect(.degrees(shake ? 20 : 0))
+                                        }
+                                        
+                                        Button {
+                                            showShareSheet = true
+                                        } label: {
+                                            Image(systemName: "square.and.arrow.up")
+                                        }
+                                    }
+                                }
+                            }
                     } else {
-                        AsyncImage(url: url) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .padding(.horizontal, -50)
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .allowsHitTesting(false)
+                        ProgressView()
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -56,20 +103,22 @@ struct MattView: View {
                                 Label("Favourites", systemImage: "star")
                             }
                             Button {
-                                
+                                showAddWidgetView = true
                             } label: {
-                                Label("How to add Widget", systemImage: "questionmark.circle")
+                                Label("How to add Matt Widget", systemImage: "questionmark.circle")
                             }
                         } label: {
                             Image(systemName: "ellipsis.circle")
                         }
+                        .sheet(isPresented: $showAddWidgetView) {
+                            AddWidgetView()
+                        }
                     }
-                    ToolbarItem(placement: .primaryAction) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "star")
-                                .foregroundColor(.yellow)
+                    ToolbarItem(placement: .bottomBar) {
+                        if noWidgets {
+                            Button("Add Widget") {
+                                showAddWidgetView = true
+                            }
                         }
                     }
                 }
@@ -77,10 +126,11 @@ struct MattView: View {
         .onChange(of: scenePhase) { newPhase in
             if newPhase == .active {
                 WidgetCenter.shared.reloadAllTimelines()
+                
                 WidgetCenter.shared.getCurrentConfigurations { result in
                     switch result {
                     case .success(let widgets):
-                        print("\(widgets.count) widgets")
+                        noWidgets = widgets.isEmpty
                     case .failure(let error):
                         debugPrint(error)
                     }
@@ -95,8 +145,8 @@ struct MattView: View {
     
     func fetch() async {
         switch await MattHelper.fetchImage() {
-        case .success(let url):
-            self.url = url
+        case .success(let cartoon):
+            self.cartoon = cartoon
             error = false
             away = false
         case .wifiError:

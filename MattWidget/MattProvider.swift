@@ -37,12 +37,8 @@ struct MattProvider: TimelineProvider {
     func fetch(completion: @escaping (Image?) -> Void) {
         Task {
             switch await MattHelper.fetchImage() {
-            case .success(let url):
-                guard let (data, _) = try? await URLSession.shared.data(from: url),
-                      let uiImage = UIImage(data: data)
-                else { return }
-                
-                completion(Image(uiImage: uiImage))
+            case .success(let cartoom):
+                completion(Image(uiImage: cartoom.uiImage))
             case .away:
                 completion(nil)
             case .wifiError:
