@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0413DAAA29957E8C00A1624F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413DAA929957E8C00A1624F /* Image.swift */; };
 		04BE0BED29931CCE00A68B8F /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BEB29931C4500A68B8F /* WidgetView.swift */; };
 		04BE0BEF2993B12200A68B8F /* MattVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BEE2993B12200A68B8F /* MattVM.swift */; };
 		04BE0BF22993B17B00A68B8F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE0BF12993B17B00A68B8F /* Defaults.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		0413DAA82995620E00A1624F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0413DAA929957E8C00A1624F /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		04BE0BEB29931C4500A68B8F /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		04BE0BEE2993B12200A68B8F /* MattVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattVM.swift; sourceTree = "<group>"; };
 		04BE0BF12993B17B00A68B8F /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				04BE0C0C29953A0B00A68B8F /* Collection.swift */,
 				04BE0C072995233100A68B8F /* UIImage.swift */,
 				04BE0C0329950CB700A68B8F /* View.swift */,
+				0413DAA929957E8C00A1624F /* Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				04BE0BF52993B22500A68B8F /* ShareCartoon.swift in Sources */,
 				04BE0BF72993B3AC00A68B8F /* AddWidgetView.swift in Sources */,
 				04E3846D29720AA70070AC9B /* MattView.swift in Sources */,
+				0413DAAA29957E8C00A1624F /* Image.swift in Sources */,
 				04BE0BFA2993B8A400A68B8F /* DismissCross.swift in Sources */,
 				04BE0BF22993B17B00A68B8F /* Defaults.swift in Sources */,
 				04BE0C0D29953A0B00A68B8F /* Collection.swift in Sources */,

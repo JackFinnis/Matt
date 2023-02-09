@@ -16,6 +16,7 @@ struct FavouritesView: View {
                 FavouriteRow(mattVM: mattVM, url: url)
             }
         }
+        .animation(.default, value: mattVM.favourites)
         .navigationTitle("Favourites")
         .navigationBarTitleDisplayMode(.inline)
         .refreshable {
