@@ -15,3 +15,7 @@ struct MattApp: App {
         }
     }
 }
+
+// check ipad app
+// explain what widget is
+// favourites view

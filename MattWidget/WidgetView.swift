@@ -9,25 +9,39 @@ import SwiftUI
 import WidgetKit
 
 struct WidgetView: View {
-    let image: Image?
-
+    enum State {
+        case cartoon(Image)
+        case away
+        case loading
+    }
+    
+    let state: State
+    
     var body: some View {
-        if let image {
+        switch state {
+        case .cartoon(let image):
             ZStack {
                 Color.white
                 image
                     .resizable()
                     .scaledToFit()
             }
-        } else {
-            MattIsAway()
+        case .away:
+            MattLogo(caption: " is away ")
+        case .loading:
+            ZStack {
+                Color.white
+                MattLogo(caption: "loading...")
+            }
+            .unredacted()
+            .environment(\.colorScheme, .light)
         }
     }
 }
 
 struct WidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetView(image: nil)
+        WidgetView(state: .loading)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

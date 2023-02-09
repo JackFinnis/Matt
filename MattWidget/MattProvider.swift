@@ -11,36 +11,36 @@ import Intents
 
 struct Entry: TimelineEntry {
     let date = Date()
-    let image: Image?
+    let state: WidgetView.State
 }
 
 struct MattProvider: TimelineProvider {
     func placeholder(in context: Context) -> Entry {
-        Entry(image: Image("cartoon"))
+        Entry(state: .loading)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
-        fetch { image in
-            completion(Entry(image: image))
+        fetch { state in
+            completion(Entry(state: state))
         }
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        fetch { image in
-            let entry = Entry(image: image)
+        fetch { state in
+            let entry = Entry(state: state)
             let oneHour = Date.now.addingTimeInterval(3600)
             let timeline = Timeline(entries: [entry], policy: .after(oneHour))
             completion(timeline)
         }
     }
     
-    func fetch(completion: @escaping (Image?) -> Void) {
+    func fetch(completion: @escaping (WidgetView.State) -> Void) {
         Task {
-            switch await MattHelper.fetchImage() {
+            switch await MattHelper.fetchCartoon() {
             case .success(let cartoom):
-                completion(Image(uiImage: cartoom.uiImage))
+                completion(.cartoon(Image(uiImage: cartoom.uiImage)))
             case .away:
-                completion(nil)
+                completion(.away)
             case .wifiError:
                 break
             }

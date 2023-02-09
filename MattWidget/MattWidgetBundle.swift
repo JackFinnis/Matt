@@ -18,10 +18,9 @@ struct MattWidgetBundle: WidgetBundle {
 struct MattWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "matt", provider: MattProvider()) { entry in
-            WidgetView(image: entry.image)
+            WidgetView(state: entry.state)
         }
         .supportedFamilies([.systemLarge])
         .configurationDisplayName("Today's Matt Cartoon!")
-        .description("Updates Daily")
     }
 }
