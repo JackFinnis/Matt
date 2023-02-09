@@ -30,6 +30,7 @@ struct FavouriteRow: View {
                     }
                     Button(role: .destructive) {
                         mattVM.favourites.removeAll { $0 == url.absoluteString }
+                        Haptics.tap()
                     } label: {
                         Label("Unfavourite", systemImage: "star.slash")
                     }
