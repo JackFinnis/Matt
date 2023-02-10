@@ -28,7 +28,7 @@ struct FavouriteRow: View {
                     Button {
                         showShareSheet = true
                     } label: {
-                        Label("Share...", systemImage: "square.and.arrow.up")
+                        Label("Share", systemImage: "square.and.arrow.up")
                     }
                     Button(role: .destructive) {
                         showDeleteConfirmation = true
